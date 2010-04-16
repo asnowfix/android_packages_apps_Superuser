@@ -106,7 +106,7 @@ static int from_init(struct su_initiator *from)
     snprintf(path, sizeof(path), "/proc/%u/exe", from->pid);
     len = readlink(path, exe, sizeof(exe));
     if (len < 0) {
-        PLOGE("Getting exe path");
+        PLOGE("Getting exe from path='%s'", path);
         return -1;
     }
     exe[len] = '\0';
